@@ -75,6 +75,10 @@ Pass{
 	{
 		// use different colors (and shades within them) to visualize the rate at which complex numbers diverge
 		int divSpeed0 = _NumIterations/float(5);
+
+		// float blueness =  1 - divergeIter/(float)divSpeed0;
+		// return float4(blueness * blue, 1);
+		
 		if (divergeIter < divSpeed0) {
 			float blueness =  1 - divergeIter/(float)divSpeed0;
 			return float4(blue * blueness, 1); // diverges very quickly
