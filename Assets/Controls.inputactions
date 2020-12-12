@@ -1,0 +1,33 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "d6475624-a7cf-48f0-bb56-202af977a29c",
+            "actions": [
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "c197787c-4e8e-4593-a08d-4787c64e0c8b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4679f637-1241-452b-8442-08252bf66b52",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

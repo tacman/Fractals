@@ -24,6 +24,15 @@ public class MandelbulbEffect : MonoBehaviour {
         // cartesian space c0.1oordinates of start screen
         Init();        
 	}
+    
+    public void OnQuit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+             Application.Quit();
+#endif
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -33,25 +42,25 @@ public class MandelbulbEffect : MonoBehaviour {
             c.transform.RotateAround(Vector3.zero, Vector3.up, Time.deltaTime * rotateSpeed);
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetKey(KeyCode.Q))
-        {
-            c.fieldOfView -= Time.deltaTime * zoomSpeed;
-            //c.transform.position += c.transform.forward * zoomSpeed * Time.deltaTime;
-        }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetKey(KeyCode.E))
-        {
-            // zoomout
-            c.fieldOfView += Time.deltaTime * zoomSpeed;
-            //c.transform.position -= c.transform.forward * zoomSpeed * Time.deltaTime;
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            autoplay = !autoplay;
-        }
-
-        c.transform.position += c.transform.right * Input.GetAxis("Horizontal") * moveSpeed;
-        c.transform.position += c.transform.up * Input.GetAxis("Vertical") * moveSpeed; // DX uses 0,0 in top left    
+        // if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetKey(KeyCode.Q))
+        // {
+        //     c.fieldOfView -= Time.deltaTime * zoomSpeed;
+        //     //c.transform.position += c.transform.forward * zoomSpeed * Time.deltaTime;
+        // }
+        // else if (Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetKey(KeyCode.E))
+        // {
+        //     // zoomout
+        //     c.fieldOfView += Time.deltaTime * zoomSpeed;
+        //     //c.transform.position -= c.transform.forward * zoomSpeed * Time.deltaTime;
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     autoplay = !autoplay;
+        // }
+        //
+        // c.transform.position += c.transform.right * Input.GetAxis("Horizontal") * moveSpeed;
+        // c.transform.position += c.transform.up * Input.GetAxis("Vertical") * moveSpeed; // DX uses 0,0 in top left    
     
     }
 
